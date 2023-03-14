@@ -14,9 +14,5 @@ class RecipeAdmin(admin.ModelAdmin):
         queryset.update(approved=True)
 
 
-class CategoryAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('recipe_type',)}
-
-
 admin.site.register(Recipe, RecipeAdmin)
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(Category)
