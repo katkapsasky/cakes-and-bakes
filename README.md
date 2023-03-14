@@ -108,10 +108,6 @@ In this section, list all of your user stories for the project.
 
 ## Wireframes
 
-In this section, display your wireframe screenshots using a Markdown `table`.
-
-Instructions on how to do Markdown `tables` start on line #213 on this site: https://pandao.github.io/editor.md/en.html
-
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
@@ -119,27 +115,26 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 | Size | Screenshot |
 | --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-home.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-home.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-home.png) |
+| Mobile | ![screenshot](documentation/wireframes/home-mobile.png) |
+| Tablet | ![screenshot](documentation/wireframes/home-tablet.png) |
+| Desktop (Logged In) | ![screenshot](documentation/wireframes/home-logged-in-desktop.png) |
+| Desktop (Logged Out) | ![screenshot](documentation/wireframes/home-logged-out-desktop.png) |
 
-### About Page Wireframes
-
-| Size | Screenshot |
-| --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-about.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-about.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-about.png) |
-
-### Contact Page Wireframes
+### My Recipes Page Wireframes
 
 | Size | Screenshot |
 | --- | --- |
-| Mobile | ![screenshot](documentation/wireframes/mobile-contact.png) |
-| Tablet | ![screenshot](documentation/wireframes/tablet-contact.png) |
-| Desktop | ![screenshot](documentation/wireframes/desktop-contact.png) |
+| Mobile | ![screenshot](documentation/wireframes/my-recipes-mobile.png) |
+| Tablet | ![screenshot](documentation/wireframes/my-recipes-tablet.png) |
+| Desktop | ![screenshot](documentation/wireframes/my-recipes-desktop.png) |
 
-Repeat for any addition wireframe pages you have.
+### Post a Recipe Page Wireframes
+
+| Size | Screenshot |
+| --- | --- |
+| Mobile | ![screenshot](documentation/wireframes/post-recipe-mobile.png) |
+| Tablet | ![screenshot](documentation/wireframes/post-recipe-tablet.png) |
+| Desktop | ![screenshot](documentation/wireframes/post-recipe-desktop.png) |
 
 ## Features
 
