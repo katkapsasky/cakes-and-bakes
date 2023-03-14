@@ -50,3 +50,36 @@ def post_recipe(request):
     }
     return render(request, template, context)
 
+
+def edit_recipe(request, slug):
+    recipe = get_object_or_404(Recipe, slug=slug)
+    if recipe.author != request.user:
+        messages.error(
+            request,
+            'This is not your recipe, you do not have access to editing.'
+        )
+        return redirect('home')
+    if request.method == "POST":
+        recipe_form = RecipeForm(
+            request.POST,
+            request.FILES,
+            instance=recipe,
+        )
+        if recipe_form.is_valid():
+            recipe_form.instance.approved = False
+            recipe_form.save()
+            messages.success(
+                request,
+                'Recipe successfully updated and pending approval!'
+            )
+            return redirect('home')
+
+        messages.error(request, 'An error has occurred, please try again.')
+    recipe_form = RecipeForm(instance=recipe)
+    template = 'edit_recipe.html'
+    context = {
+        'recipe_form': recipe_form,
+        'recipe': recipe,
+    }
+    return render(request, template, context)
+
