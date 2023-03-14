@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="col-md-4 card mb-4  mt-3 ">
+    <div class="card-body">
+        {% if posted %}
+        <div class="alert alert-success" role="alert">
+            Your recipe is awaiting approval
+        </div>
+        {% else %}
+        {% if request.user.is_authenticated %}
+
+        <h3>Edit {{ recipe.title }}</h3>
+        <p>Editing as: {{ request.user.username }}</p>
+        <form method="post" action="{% url 'edit_recipe' recipe.slug %}" enctype="multipart/form-data" class="mt-5">
+            {{ recipe_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+        </form>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block js %}
+<script>
+    // convert Recipe title to slug-format on front-end
+    /* jshint esversion: 11 */
+    let title = document.getElementById("id_title");
+    let slug = document.getElementById("id_slug");
+    title?.addEventListener("keyup", convertToSlug);
+    slug?.addEventListener("keyup", convertToSlug);
+
+    function convertToSlug() {
+      slug.value = title.value.toLowerCase()
+                 .replace(/ /g, '-')
+                 .replace(/[^\w-]+/g, '');
+    }
+</script>
+{% endblock js %}
