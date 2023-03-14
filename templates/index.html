@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 
 <div class="container-fluid">
@@ -13,9 +15,9 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                {% if "placeholder" in recipe.featured_image.url %}
+                                {% if "placeholder" in recipe.image.url %}
                                 <img class="card-img-top"
-                                    src="../static/images/placeholder-image.jpg">
+                                    src="{% static 'images/placeholder.jpg' %}">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ recipe.image.url }}">
                                 {% endif %}
