@@ -9,11 +9,11 @@
             Your recipe is awaiting approval
         </div>
         {% else %}
-        {% if user.is_authenticated %}
+        {% if request.user.is_authenticated %}
 
         <h3>Post a Recipe</h3>
-        <p>Posting as: {{ user.username }}</p>
-        <form method="post" style="margin-top: 1.3em;">
+        <p>Posting as: {{ request.user.username }}</p>
+        <form method="post" action="{% url 'post_recipe' %}" enctype="multipart/form-data" class="mt-5">
             {{ recipe_form | crispy }}
             {% csrf_token %}
             <button type="submit" class="btn btn-signup btn-lg">Submit</button>
@@ -24,3 +24,20 @@
 </div>
 
 {% endblock content %}
+
+{% block js %}
+<script>
+    // convert Recipe title to slug-format on front-end
+    /* jshint esversion: 11 */
+    let title = document.getElementById("id_title");
+    let slug = document.getElementById("id_slug");
+    title?.addEventListener("keyup", convertToSlug);
+    slug?.addEventListener("keyup", convertToSlug);
+
+    function convertToSlug() {
+      slug.value = title.value.toLowerCase()
+                 .replace(/ /g, '-')
+                 .replace(/[^\w-]+/g, '');
+    }
+</script>
+{% endblock js %}
