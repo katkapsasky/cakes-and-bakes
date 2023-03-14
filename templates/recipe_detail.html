@@ -1,5 +1,5 @@
 {% extends 'base.html' %} 
-
+{% load static %}
 {% block content %}
 
 <div class="masthead">
@@ -13,13 +13,18 @@
                 <!-- Recipe author goes before the | the post's created date goes after -->
                 <p class="post-subtitle"> {{ recipe.author }} | {{ recipe.posted_on }} </p>
                 <p class="post-subtitle"> {{ recipe.total_time }} </p>
+                {% if recipe.author == request.user %}
+                <p class="post-subtitle">
+                    <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-primary">Edit Recipe</a>
+                </p>
+                {% endif %}
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="../static/images/placeholder-image.jpg" width="100%">
+                {% if "placeholder" in recipe.image.url %}
+                <img src="{% static 'images/placeholder.jpg' %}" class="w-100">
                 {% else %}
-                <img src="{{ recipe.image.url }}" width="100%">
+                <img src="{{ recipe.image.url }}" class="w-100">
                 {% endif %}
             </div>
         </div>
@@ -33,10 +38,10 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">
-                    {{ recipe.quantity }} {{ recipe.metric }}: {{ recipe.ingredient_name }} 
+                    {{ recipe.ingredients|linebreaksbr }}
                 </p>
                 <p class="card-text ">
-                    {{ recipe.method }}
+                    {{ recipe.method|linebreaksbr }}
                 </p>
                 <div class="row">
 
@@ -55,7 +60,6 @@
     </div>
             <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-                <!-- For later -->
             </div>
     </div>
 </div>
