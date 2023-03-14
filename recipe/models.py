@@ -10,6 +10,9 @@ class Recipe(models.Model):
         User, on_delete=models.CASCADE, related_name="recipe_post"
     )
     total_time = models.CharField(max_length=50)
+    ingredient_name = models.CharField(max_length=50, null=True)
+    metric = models.CharField(max_length=25, null=True)
+    quantity = models.IntegerField(null=True)
     method = models.TextField()
     image = CloudinaryField('image', default='placeholder')
     recipe_description = models.CharField(max_length=200)
@@ -29,14 +32,14 @@ class Recipe(models.Model):
         return self.likes.count()
 
 
-class Ingredient(models.Model):
-    recipe_name = models.ForeignKey(
-        Recipe, related_name='ingredients', on_delete=models.CASCADE
-    )
-    ingredient_name = models.CharField(max_length=50)
-    metric = models.CharField(max_length=25)
-    quantity = models.IntegerField()
-
-
 class Category(models.Model):
     recipe_type = models.CharField(max_length=50)
+    slug = models.SlugField(unique=True, null=True)
+    description = models.TextField(u'Description', blank=True, null=True)
+
+    class Meta:
+        verbose_name = u'Category'
+        verbose_name_plural = u'Categories'
+
+    def __unicode__(self):
+        return self.name

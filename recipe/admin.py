@@ -1,13 +1,22 @@
 from django.contrib import admin
-from .models import Recipe
-from django_summernote.admin import SummernoteModelAdmin
+from .models import Recipe, Category
 
 
-@admin.register(Recipe)
-class RecipeAdmin(SummernoteModelAdmin):
+class RecipeAdmin(admin.ModelAdmin):
 
     list_display = ('title', 'slug', 'approved', 'posted_on')
     search_fields = ['title', 'author']
     list_filter = ('approved', 'posted_on')
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('method')
+    actions = ['approve_recipes']
+
+    def approve_recipes(self, request, queryset):
+        queryset.update(approved=True)
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('recipe_type',)}
+
+
+admin.site.register(Recipe, RecipeAdmin)
+admin.site.register(Category, CategoryAdmin)
