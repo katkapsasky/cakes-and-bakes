@@ -83,3 +83,18 @@ def edit_recipe(request, slug):
     }
     return render(request, template, context)
 
+
+def post_category(request):
+    category_form = CategoryForm(request.POST or None)
+    if request.method == "POST":
+        if category_form.is_valid():
+            category_form.save()
+            messages.success(request, 'Category successfully added!')
+            return redirect('home')
+
+        messages.error(request, 'An error has occurred, please try again.')
+    template = 'post_category.html'
+    context = {
+        'category_form': category_form,
+    }
+    return render(request, template, context)
