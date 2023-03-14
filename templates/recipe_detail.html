@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Recipe title goes in these h1 tags -->
+                <h1 class="post-title">
+                    {{ recipe.title }}
+                </h1>
+                <!-- Recipe author goes before the | the post's created date goes after -->
+                <p class="post-subtitle"> {{ recipe.author }} | {{ recipe.posted_on }} </p>
+                <p class="post-subtitle"> {{ recipe.total_time }} </p>
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <!-- The featured image URL goes in the src attribute -->
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="../static/images/placeholder-image.jpg" width="100%">
+                {% else %}
+                <img src="{{ recipe.image.url }}" width="100%">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left  top">
+            <div class="card-body">
+                <!-- The post content goes inside the card-text. -->
+                <!-- Use the | safe filter inside the template tags -->
+                <p class="card-text ">
+                    {{ recipe.quantity }} {{ recipe.metric }}: {{ recipe.ingredient_name }} 
+                </p>
+                <p class="card-text ">
+                    {{ recipe.method }}
+                </p>
+                <div class="row">
+
+                    <div class="col-1">
+                        <!-- The number of likes goes before the closing strong tag -->
+                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ recipe.number_of_likes }} </strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+            <div class="col-md-4 card mb-4  mt-3 ">
+            <div class="card-body">
+                <!-- For later -->
+            </div>
+    </div>
+</div>
+
+{% endblock content %}
