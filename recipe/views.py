@@ -84,6 +84,18 @@ def edit_recipe(request, slug):
     return render(request, template, context)
 
 
+def delete_recipe(request, slug):
+    recipe = get_object_or_404(Recipe, slug=slug)
+    if recipe.author != request.user:
+        messages.error(
+            request,
+            'This is not your recipe, you do not have access to editing.'
+        )
+        return redirect('home')
+    recipe.delete()
+    return redirect('home')
+
+
 def post_category(request):
     category_form = CategoryForm(request.POST or None)
     if request.method == "POST":

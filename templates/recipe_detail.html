@@ -17,6 +17,9 @@
                 <p class="post-subtitle">
                     <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-primary">Edit Recipe</a>
                 </p>
+                <p class="post-subtitle">
+                    <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-primary">Delete Recipe</a>
+                </p>
                 {% endif %}
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
