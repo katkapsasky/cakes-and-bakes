@@ -1,12 +1,47 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #F0CF65;
 }
 
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
+nav {
+    background-color: #D7816A;
+}
+
+.navbar-brand {
+    font-family: Caveat, sans-serif;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #fff;
+}
+
+.navbar-brand:hover {
+    font-weight: bolder;
+    color: #F6E2A2;
+}
+
+#navbarText {
+    font-family: Raleway, sans-serif;
+    font-size: 1.4rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav span {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    font-weight: bolder;
+    color: #F6E2A2;
+}
+
+.row {
+    background-color: #F6E2A2;
 }
 
 .red-o {
@@ -15,14 +50,6 @@ body {
 
 .thin {
     font-weight: 300;
-}
-
-.light-bg {
-    background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #445261;
 }
 
 .main-bg {
