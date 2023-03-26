@@ -4,6 +4,9 @@ from cloudinary.models import CloudinaryField
 
 
 class Category(models.Model):
+    '''
+    Database model for recipe categories
+    '''
     recipe_type = models.CharField(max_length=50, null=False, blank=False)
 
     class Meta:
@@ -15,6 +18,9 @@ class Category(models.Model):
 
 
 class Recipe(models.Model):
+    '''
+    Database model for recipe components
+    '''
     title = models.CharField(
         max_length=50, unique=True, null=False, blank=False
     )

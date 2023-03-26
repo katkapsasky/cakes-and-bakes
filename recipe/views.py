@@ -7,6 +7,10 @@ from .forms import RecipeForm, CategoryForm
 
 
 class RecipeList(generic.ListView):
+    '''
+    Class based view to create paginated list of
+    posted recipes
+    '''
     model = Recipe
     queryset = Recipe.objects.filter(approved=True).order_by('-posted_on')
     template_name = 'index.html'
@@ -14,7 +18,9 @@ class RecipeList(generic.ListView):
 
 
 class RecipeDetail(View):
-
+    '''
+    Class based view to show recipe details
+    '''
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(approved=True)
         recipe = get_object_or_404(queryset, slug=slug)
@@ -33,6 +39,9 @@ class RecipeDetail(View):
 
 
 def post_recipe(request):
+    '''
+    Function to post a new recipe
+    '''
     recipe_form = RecipeForm(request.POST or None, request.FILES)
     if request.method == "POST":
         if recipe_form.is_valid():
@@ -53,6 +62,9 @@ def post_recipe(request):
 
 
 def edit_recipe(request, slug):
+    '''
+    Function to edit an existing recipe
+    '''
     recipe = get_object_or_404(Recipe, slug=slug)
     if recipe.author != request.user:
         messages.error(
@@ -86,6 +98,9 @@ def edit_recipe(request, slug):
 
 
 def delete_recipe(request, slug):
+    '''
+    Function to delete a recipe
+    '''
     recipe = get_object_or_404(Recipe, slug=slug)
     if recipe.author != request.user:
         messages.error(
@@ -98,7 +113,9 @@ def delete_recipe(request, slug):
 
 
 class RecipeLikes(View):
-
+    '''
+    Class based function to like a recipe
+    '''
     def post(self, request, slug, *args, **kwargs):
         recipe = get_object_or_404(Recipe, slug=slug)
         if recipe.likes.filter(id=request.user.id).exists():

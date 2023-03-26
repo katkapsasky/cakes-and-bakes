@@ -3,7 +3,10 @@ from .models import Recipe, Category
 
 
 class RecipeAdmin(admin.ModelAdmin):
-
+    '''
+    Class based function to display recipe posts
+    and allow admin to search through and approve posted recipes
+    '''
     list_display = ('title', 'slug', 'approved', 'posted_on')
     search_fields = ['title', 'author']
     list_filter = ('approved', 'posted_on')
@@ -15,6 +18,10 @@ class RecipeAdmin(admin.ModelAdmin):
 
 
 class RecipeAdminSite(admin.AdminSite):
+    '''
+    Class based function to create additional admin site
+    for site administrators/managers
+    '''
     site_header = "Recipe Post Admin"
     site_title = "Recipe Post Admin Portal"
     title = "Welcome to Cakes & Bakes"

@@ -3,12 +3,18 @@ from .models import Recipe, Category
 
 
 class CategoryForm(forms.ModelForm):
+    '''
+    Form for adding new categories
+    '''
     class Meta:
         model = Category
         fields = "__all__"
 
 
 class RecipeForm(forms.ModelForm):
+    '''
+    Form for posting new recipe
+    '''
     class Meta:
         model = Recipe
         fields = "__all__"
