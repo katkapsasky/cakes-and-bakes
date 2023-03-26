@@ -78,7 +78,7 @@ nav span {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #32A287;
     color: white;
     position: relative;
 }
@@ -95,7 +95,7 @@ nav span {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: #32A287;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -109,7 +109,12 @@ nav span {
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #A1442B;
+}
+
+.card-title:hover {
+    color: #A1442B;
+    font-weight: 800;
 }
 
 .post-title {
