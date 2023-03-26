@@ -12,4 +12,9 @@ urlpatterns = [
         views.delete_recipe,
         name='delete_recipe'
     ),
+    path(
+        'likes/<slug:slug>',
+        views.RecipeLikes.as_view(),
+        name='recipe_likes'
+    ),
 ]
