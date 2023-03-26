@@ -45,18 +45,6 @@ nav span {
     background-color: #F8E8B4;
 }
 
-.red-o {
-    color: #E84610;
-}
-
-.thin {
-    font-weight: 300;
-}
-
-.main-bg {
-    background-color: #F8E8B4;
-}
-
 .card {
     border: none;
     background-color: transparent;
@@ -164,7 +152,7 @@ nav span {
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #F6E2A2;
     background: transparent;
     border: none;
 }
