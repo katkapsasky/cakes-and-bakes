@@ -183,3 +183,15 @@ footer {
     text-decoration: none;
     color: #fff;
 }
+
+.post-recipe {
+    background-color: #B48CBA;
+    color: #fff;
+    margin: 1%;
+}
+
+.logout {
+    background-color: #D4775E;
+    color: #fff;
+    padding: 1%;
+}
