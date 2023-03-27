@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
@@ -18,8 +18,29 @@
                     <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-primary">Edit Recipe</a>
                 </p>
                 <p class="recipe-subtitle">
-                    <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-primary">Delete Recipe</a>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-delete">Delete Recipe</a>
                 </p>
+                <div class="modal fade text-dark" id="modal-delete" tabindex="-1" aria-labelledby="modal-delete-label"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modal-delete-label">Delete Recipe</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete this recipe?
+                                <br>
+                                <small class="text-muted">Warning! This action cannot be undone.</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-danger">Delete Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {% endif %}
             </div>
             <div class="d-none d-md-block col-md-6 recipe-image">
@@ -52,7 +73,7 @@
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
-                            <form method="POST" class="d-inline" action="{% url 'recipe_likes' recipe.slug %}" >
+                            <form method="POST" class="d-inline" action="{% url 'recipe_likes' recipe.slug %}">
                                 {% csrf_token %}
                                 {% if liked %}
                                 <button type="submit" name="recipepost_id" value="{{recipe.slug}}" class="btn-like">
@@ -79,9 +100,9 @@
             <hr>
         </div>
     </div>
-            <div class="col-md-4 card mb-4  mt-3 ">
-            <div class="card-body">
-            </div>
+    <div class="col-md-4 card mb-4  mt-3 ">
+        <div class="card-body">
+        </div>
     </div>
 </div>
 
