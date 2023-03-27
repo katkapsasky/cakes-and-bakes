@@ -5,7 +5,7 @@ body {
 }
 
 nav {
-    background-color: #D7816A;
+    background-color: #A44E37;
 }
 
 .navbar-brand {
@@ -60,7 +60,7 @@ nav span {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #B48CBA;
+    background-color: #815987;
 }
 
 .author {
@@ -79,7 +79,7 @@ nav span {
 }
 
 .recipe-text {
-    background-color: #B48CBA;
+    background-color: #815987;
     color: #fff;
     position: relative;
 }
@@ -96,7 +96,7 @@ nav span {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #B48CBA;
+    background: #815987;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -110,11 +110,11 @@ nav span {
 
 .post-link:hover,
 .page-link {
-    color: #A1442B;
+    color: #A44E37;
 }
 
 .card-title:hover {
-    color: #A1442B;
+    color: #A44E37;
     font-weight: 800;
 }
 
@@ -135,20 +135,20 @@ nav span {
 }
 
 .card-text-method {
-    background-color: #D4775E;
+    background-color: #A44E37;
     color: #fff;
     padding: 1%;
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #006F6F;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #006F6F;
 }
 
 .link {
@@ -177,7 +177,7 @@ nav span {
 }
 
 footer {
-    background-color: #B48CBA;
+    background-color: #815987;
 }
 
 .fab {
@@ -186,13 +186,21 @@ footer {
 }
 
 .post-recipe {
-    background-color: #B48CBA;
-    color: #fff;
+    background-color: #fff;
+    color: #A1442B;
     margin: 1%;
 }
 
 .account {
-    background-color: #D4775E;
+    background-color: #A44E37;
     color: #fff;
     padding: 1%;
+}
+
+.category-name {
+    font-weight: 800;
+}
+
+.category-name, .manage-categories {
+    color: #A1442B;
 }
