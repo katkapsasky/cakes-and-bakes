@@ -2,7 +2,7 @@
 
 Cakes and Bakes is a recipe blog app created with Django, where users can find recipes for cakes and other sweet treats, and post their own recipes to share with other users.
 
-![amiresponsive screenshot](documentation/mockup.png)
+![amiresponsive screenshot](documentation/responsivity/amiresponsive.png)
 
 The app intends to provide a hub for bakers and baking enthusiasts of all ages who want to try out new recipes, gain inspiration, and share their own recipes with others.
 
@@ -146,6 +146,8 @@ Consider adding any helpful links or notes to help remind you in the future, if 
 - [ElephantSQL](https://www.elephantsql.com) used as the Postgres database.
 - [Heroku](https://www.heroku.com) used for hosting the deployed back-end site.
 - [Cloudinary](https://cloudinary.com) used for online static file storage.
+- [Hex Color Tool](https://www.hexcolortool.com/#24bcbc) used for darkening background colors for accesibility/readability.
+- [Jimpix](https://jimpix.co.uk/words/username-generator.asp) used for generating random usernames for recipe posts
 
 ## Database Design
 
@@ -376,6 +378,7 @@ You can fork this repository by using the following steps:
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder by Tim Nelson](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+| [Bootstrap Modal](https://getbootstrap.com/docs/5.0/components/modal/) | Delete Recipe/Category buttons | used as an extra step of user feedback when attempting permanent actions |
 
 ### Media
 
@@ -384,10 +387,16 @@ You can fork this repository by using the following steps:
 | [BBC Good Food, Angela Nilsen](https://www.bbcgoodfood.com/recipes/ultimate-apple-pie) | apple pie recipe | recipe title, description, total time, ingredients and method | 
 | [BBC Good Food, Valerie Barrett](https://www.bbcgoodfood.com/recipes/vintage-chocolate-chip-cookies) | chocolate chip cookies recipe | recipe title, description, total time, ingredients and method | 
 | [BBC Good Food, Mary Cadogan](https://www.bbcgoodfood.com/recipes/no-cook-chocolate-tart) | chocolate chip cookies recipe | recipe title, description, total time, ingredients and method | 
+| [BBC Good Food, Tana Ramsay](https://www.bbcgoodfood.com/recipes/lemon-drizzle-cake) | lemon drizzle cake recipe | recipe title, description, total time, ingredients and method | 
+| [BBC Good Food, Good Food Team](https://www.bbcgoodfood.com/recipes/strawberry-cheesecake-4-easy-steps) | strawberry cheesecake recipe | recipe title, description, total time, ingredients and method |
+| [BBC Good Food, Orlando Murrin](https://www.bbcgoodfood.com/recipes/best-ever-chocolate-brownies-recipe) | chocolate brownies recipe | recipe title, description, total time, ingredients and method |
 | [Unsplash, Callum Hill](https://unsplash.com/photos/LdK3Q7AAGPc) | placeholder image recipe posts | image | 
 | [Pexels, Asya Vlasova](https://www.pexels.com/photo/apple-pie-and-raspberry-pie-3065590/) | apple pie recipe | image |
 | [Pexels, Regina Ferraz](https://www.pexels.com/search/chocolate%20tart/) | chocolate tart recipe | image |
-| [Pexels, Lisa Fotios](https://www.pexels.com/photo/macro-photography-of-pile-of-3-cookie-230325/) | chocolate chip cookies | image |
+| [Pexels, Lisa Fotios](https://www.pexels.com/photo/macro-photography-of-pile-of-3-cookie-230325/) | chocolate chip cookies recipe | image |
+| [Pexels, Arun Thomas](https://www.pexels.com/photo/close-up-photograph-of-a-lemon-cake-8211178/) | lemon drizzle cake recipe | image |
+| [Pexels, Suzy Hazelwood](https://www.pexels.com/photo/cheesecake-1126359/) | strawberry cheesecake recipe | image |
+| [Pexels, Nikola Cedikova](https://www.pexels.com/photo/brown-bread-on-white-ceramic-plate-4555505/) | chocolate brownies recipe | image |
 | [TinyPNG](https://tinypng.com) | compressing size of placeholder image | image |
 
 ### Acknowledgements
