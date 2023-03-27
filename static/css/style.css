@@ -152,13 +152,14 @@ nav span {
 }
 
 .link {
-    color: #23BBBB;
+    color: #F6E2A2;
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: #445261;
+    font-weight: 800;
+    color: #F6E2A2;
     text-decoration: underline;
 }
 
@@ -190,7 +191,7 @@ footer {
     margin: 1%;
 }
 
-.logout {
+.account {
     background-color: #D4775E;
     color: #fff;
     padding: 1%;

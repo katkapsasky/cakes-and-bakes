@@ -10,7 +10,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign In" %}</h3>
+      <div class="account">
+      <h2>{% trans "Sign In" %}</h2>
 
       <p>
         {% blocktrans %}
@@ -20,12 +21,13 @@
         <a class="link" href="{{ signup_url }}">sign up here</a>.
         {% endblocktrans %}
       </p>
+      </div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-
+      <div class="account">
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}
@@ -34,7 +36,9 @@
         {% endif %}
         <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
       </form>
+    </div>
       </div>
   </div>
+</div>
 </div>
 {% endblock %}
