@@ -35,11 +35,14 @@
                     </li>
                     {% if request.user.is_authenticated %}
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'liked_recipes' %}">Liked Recipes</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'post_recipe' %}">Post a Recipe</a>
                     </li>
                     {% if request.user.is_superuser %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'post_category' %}">Post a Category</a>
+                        <a class="nav-link" href="{% url 'manage_categories' %}">Categories</a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
