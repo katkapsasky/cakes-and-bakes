@@ -2,27 +2,27 @@
 {% load static %}
 {% block content %}
 
-<div class="masthead">
+<div class="recipe-heading">
     <div class="container">
         <div class="row g-0">
-            <div class="col-md-6 masthead-text">
+            <div class="col-md-6 recipe-text">
                 <!-- Recipe title goes in these h1 tags -->
-                <h1 class="post-title">
+                <h1 class="recipe-title">
                     {{ recipe.title }}
                 </h1>
                 <!-- Recipe author goes before the | the post's created date goes after -->
-                <p class="post-subtitle"> {{ recipe.author }} | {{ recipe.posted_on }} </p>
-                <p class="post-subtitle"> {{ recipe.total_time }} </p>
+                <p class="recipe-subtitle"> {{ recipe.author }} | {{ recipe.posted_on }} </p>
+                <p class="recipe-subtitle"> Total time: {{ recipe.total_time }} </p>
                 {% if recipe.author == request.user %}
-                <p class="post-subtitle">
+                <p class="recipe-subtitle">
                     <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-primary">Edit Recipe</a>
                 </p>
-                <p class="post-subtitle">
+                <p class="recipe-subtitle">
                     <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-primary">Delete Recipe</a>
                 </p>
                 {% endif %}
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
+            <div class="d-none d-md-block col-md-6 recipe-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in recipe.image.url %}
                 <img src="{% static 'images/placeholder.jpg' %}" class="w-100">
@@ -38,16 +38,17 @@
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">
+                <div class="card-text-ingredients">
+                    <h2>Ingredients:</h2><br>
                     {{ recipe.ingredients|linebreaksbr }}
-                </p>
-                <p class="card-text ">
+                </div>
+                <br>
+                <div class="card-text-method">
+                    <h2>Method:</h2><br>
                     {{ recipe.method|linebreaksbr }}
-                </p>
+                </div>
+                <br>
                 <div class="row">
-
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
