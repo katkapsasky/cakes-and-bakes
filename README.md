@@ -87,16 +87,9 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ## Features
 
-In this section, you should go over the different parts of your project,
-and describe each in a sentence or so.
+Cakes & Bakes consists of two main pages for users; the homepage, which shows all posted recipes and the post a recipe page where users can post a new recipe. There is also a registration page for new users, account login and logout pages for existing users and the recipe detail page, accessible to all when a recipe is clicked on which provides the recipe ingredients, method, total time to make and optionally, an image.
 
-You will need to explain what value each of the features provides for the user,
-focusing on who this website is for, what it is that they want to achieve,
-and how your project is the best way to help them achieve these things.
-
-For some/all of your features, you may choose to reference the specific project files that implement them.
-
-IMPORTANT: Remember to always include a screenshot of each individual feature!
+Additionally, for site administrators there is a post a category page where they can add a new category and an admin panel from which they can approve, edit and delete recipes and categories.
 
 ### Existing Features
 
@@ -137,11 +130,6 @@ Consider adding any helpful links or notes to help remind you in the future, if 
     - Any additional notes about this feature.
 
 ## Tools & Technologies Used
-
-In this section, you should explain the various tools and technologies used to develop the project.
-Make sure to put a link (where applicable) to the source, and explain what each was used for.
-Some examples have been provided, but this is just a sample only, your project might've used others.
-Feel free to delete any unused items below as necessary.
 
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
