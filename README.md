@@ -11,55 +11,24 @@ The live site can be viewed [here](https://ui.dev/amiresponsive?url=https://cake
 
 ## UX
 
-In this section, you will briefly explain your design processes.
+For the site's UX, I chose a bright and colourful scheme using a mix of pastel colours to mirror the fun and creativity that baking involves. I used the Caveat font for the Cakes & Bakes logo, which has a similar style to handwriting to connect with the feeling of a handwritten recipe book. I kept the rest of the font on the site quite simple with Raleway so that the site remains easily accessible and navigable.
 
 ### Colour Scheme
 
-Explain your colours and the colour scheme.
+I used [coolors.co](https://coolors.co/b48cba-73937e-f1d26a-d4775e-32a287) to generate my colour palette.
 
-- `#000000` used for primary text.
-- `#E84610` used for primary highlights.
-- `#4A4A4F` used for secondary text.
-- `#009FE3` used for secondary highlights.
+- `#D4775E` used for the navigation bar
+- `#32A287` used for the footer
+- `#F1D26A` used for the main background colour
+- `#B48CBA` used for highlights and accents
 
-Consider adding a link and screenshot for your colour scheme using "coolors".
-https://coolors.co/generate
-
-When you add a colour to the palette, the URL is dynamically updated, making it easier for you to return back to your colour palette later if needed.
-
-Example:
-
-I used [coolors.co](https://coolors.co/e84610-009fe3-4a4a4f-445261-d63649-e6ecf0-000000) to generate my colour palette.
-
-![screenshot](documentation/coolors.png)
-
-If you've used CSS `:root` variables, consider also including a code snippet here!
-
-I've used CSS `:root` variables to easily update the global colour scheme by changing only one value, instead of everywhere in the CSS file.
-
-```css
-:root {
-    /* P = Primary | S = Secondary */
-    --p-text: #000000;
-    --p-highlight: #E84610;
-    --s-text: #4A4A4F;
-    --s-highlight: #009FE3;
-    --white: #FFFFFF;
-    --black: #000000;
-}
-```
+![screenshot](documentation/colourscheme/cakesandbakes-colourscheme.png)
 
 ### Typography
 
-Explain any fonts and icon libraries used, like Google Fonts and/or Font Awesome.
+- [Caveat](https://fonts.google.com/specimen/Caveat) was used for the Cakes & Bakes logo.
 
-Consider adding a link to each font used, and the Font Awesome site if used (or similar icon library).
-
-Example:
-
-- [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
-
-- [Lato](https://fonts.google.com/specimen/Lato) was used for all other secondary text.
+- [Raleway](https://fonts.google.com/specimen/Raleway) was used for headings, primary and secondary text.
 
 - [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
 
