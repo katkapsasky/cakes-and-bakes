@@ -6,8 +6,7 @@ Cakes and Bakes is a recipe blog app created with Django, where users can find r
 
 The app intends to provide a hub for bakers and baking enthusiasts of all ages who want to try out new recipes, gain inspiration, and share their own recipes with others.
 
-The live site can be viewed [here](https://ui.dev/amiresponsive?url=https://cakes-and-bakes.herokuapp.com
-)
+The live site can be viewed [here](https://cakes-and-bakes.herokuapp.com/)
 
 ## UX
 
