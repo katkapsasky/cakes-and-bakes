@@ -371,38 +371,24 @@ You can fork this repository by using the following steps:
 
 ## Credits
 
-In this section you need to reference where you got your content, media, and extra help from.
-It is common practice to use code from other repositories and tutorials,
-however, it is important to be very specific about these sources to avoid plagiarism.
-
 ### Content
-
-Use this space to provide attribution links to any borrowed code snippets, elements, or resources.
-A few examples have been provided below to give you some ideas.
-
-Ideally, you should provide an actual link to every resource used, not just a generic link to the main site!
 
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder by Tim Nelson](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
-| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
-| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
-| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
-| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
-| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
-| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
-| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
-| [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
-| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
-| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
 
 ### Media
 
-| Source | Location | Type | Notes |
-| --- | --- | --- | --- |
-| [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
-| [ImageResizer](https://imageresizer.com/) | user recipe posts | image | tool for image compression |
+| Source | Used for | Type | 
+| --- | --- | --- | 
+| [BBC Good Food, Angela Nilsen](https://www.bbcgoodfood.com/recipes/ultimate-apple-pie) | apple pie recipe | recipe title, description, total time, ingredients and method | 
+| [BBC Good Food, Valerie Barrett](https://www.bbcgoodfood.com/recipes/vintage-chocolate-chip-cookies) | chocolate chip cookies recipe | recipe title, description, total time, ingredients and method | 
+| [BBC Good Food, Mary Cadogan](https://www.bbcgoodfood.com/recipes/no-cook-chocolate-tart) | chocolate chip cookies recipe | recipe title, description, total time, ingredients and method | 
+| [Unsplash, Callum Hill](https://unsplash.com/photos/LdK3Q7AAGPc) | placeholder image recipe posts | image | 
+| [Pexels, Asya Vlasova](https://www.pexels.com/photo/apple-pie-and-raspberry-pie-3065590/) | apple pie recipe | image |
+| [Pexels, Regina Ferraz](https://www.pexels.com/search/chocolate%20tart/) | chocolate tart recipe | image |
+| [Pexels, Lisa Fotios](https://www.pexels.com/photo/macro-photography-of-pile-of-3-cookie-230325/) | chocolate chip cookies | image |
+| [TinyPNG](https://tinypng.com) | compressing size of placeholder image | image |
 
 ### Acknowledgements
 
