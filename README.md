@@ -88,7 +88,7 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 Cakes & Bakes consists of three main pages for users; the Homepage, which shows all posted recipes, the Post a Recipe page where users can post a new recipe, and the Liked Recipes page which shows a list of recipes that user has previously liked. There is also a registration page for new users, account login and logout pages for existing users and the recipe detail page, accessible to all when a recipe title is clicked on from the homepage, which provides the recipe ingredients, method, total time to make and optionally, an image.
 
-Additionally, for site administrators there is a manage categories page where they can add a new category or edit/delete an existing one, and an admin panel from which they can approve, edit and delete recipes.
+Additionally, for site administrators there is a Categories page where they can add a new category or edit/delete an existing one, and an admin panel from which they can approve, edit and delete recipes.
 
 ### Existing Features
 

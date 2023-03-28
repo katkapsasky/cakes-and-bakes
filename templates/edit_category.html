@@ -7,8 +7,8 @@
     <div class="card-body">
         {% if request.user.is_superuser %}
 
-        <h3>Edit Category: {{ category }}</h3>
-        <form method="post" action="{% url 'edit_category' category.id %}" class="mt-5">
+        <h3 class="manage-categories">Edit Category: {{ category }}</h3>
+        <form method="post" action="{% url 'edit_category' category.id %}" class="mt-5 manage-categories">
             {{ category_form | crispy }}
             {% csrf_token %}
             <button type="submit" class="btn btn-signup btn-lg">Submit</button>
