@@ -86,9 +86,9 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ## Features
 
-Cakes & Bakes consists of two main pages for users; the homepage, which shows all posted recipes and the post a recipe page where users can post a new recipe. There is also a registration page for new users, account login and logout pages for existing users and the recipe detail page, accessible to all when a recipe is clicked on which provides the recipe ingredients, method, total time to make and optionally, an image.
+Cakes & Bakes consists of three main pages for users; the Homepage, which shows all posted recipes, the Post a Recipe page where users can post a new recipe, and the Liked Recipes page which shows a list of recipes that user has previously liked. There is also a registration page for new users, account login and logout pages for existing users and the recipe detail page, accessible to all when a recipe title is clicked on from the homepage, which provides the recipe ingredients, method, total time to make and optionally, an image.
 
-Additionally, for site administrators there is a post a category page where they can add a new category and an admin panel from which they can approve, edit and delete recipes and categories.
+Additionally, for site administrators there is a manage categories page where they can add a new category or edit/delete an existing one, and an admin panel from which they can approve, edit and delete recipes.
 
 ### Existing Features
 
@@ -116,25 +116,24 @@ Hint: the more, the merrier!
 
 ### Future Features
 
-Do you have additional ideas that you'd like to include on your project in the future?
-Fantastic! List them here!
-It's always great to have plans for future improvements!
-Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
-
-- Cool new feature #1
-    - Any additional notes about this feature.
-- Cool new feature #2
-    - Any additional notes about this feature.
-- Cool new feature #3
-    - Any additional notes about this feature.
+- Registration Options
+    - Include additional sign-in options for users, such as Facebook or Google, to make it easier to access their account.
+- Forgotten Password
+    - Include an option for users to reset their password if they have forgotten it so they don't lose their account/liked recipes.
+- Featured Recipe
+    - Include a featured recipe at the top of the homepage which is set by a site administrator and rotates periodically with a new one.
+- Recipe Rating and Comments
+    - Include a star rating on individual recipes where users can rate recipes they've tried and leave comments with feedback/suggestions. 
+- My Recipes 
+    - Include a My Recipes page where users can easily access a list of all the recipes they have posted to the site.
 
 ## Tools & Technologies Used
 
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
-- [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) and/or [CSS Grid](https://www.w3schools.com/css/css_grid.asp) used for an enhanced responsive layout.
+- [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) used for an enhanced responsive layout.
 - [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- [JavaScript](https://www.javascript.com) used for user interaction on the site.
+- [JavaScript](https://www.javascript.com) used for converting recipe titles to slugs.
 - [Python](https://www.python.org) used as the back-end programming language.
 - [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
 - [GitHub](https://github.com) used for secure online code storage.
