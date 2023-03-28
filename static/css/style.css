@@ -1,9 +1,10 @@
-
+/* Global styling */
 body {
     background-color: #F8E8B4;
     font-family: Raleway, sans-serif;
 }
 
+/* Navbar */
 nav {
     background-color: #A44E37;
 }
@@ -42,6 +43,7 @@ nav span {
     color: #F8E8B4;
 }
 
+/* Homepage and Recipe Detail */
 .row {
     background-color: #F8E8B4;
 }
@@ -140,6 +142,7 @@ nav span {
     padding: 1%;
 }
 
+/* Buttons */
 .btn-signup {
     background-color: #006F6F;
     color: #fff;
@@ -151,6 +154,7 @@ nav span {
     color: #006F6F;
 }
 
+/* Links */
 .link {
     color: #F6E2A2;
     text-decoration: none;
@@ -163,6 +167,7 @@ nav span {
     text-decoration: underline;
 }
 
+/* Like Button */
 .btn-like {
     color: #E84610;
     border: none;
@@ -176,6 +181,7 @@ nav span {
     border: none;
 }
 
+/* Footer */
 footer {
     background-color: #815987;
 }
@@ -185,18 +191,21 @@ footer {
     color: #fff;
 }
 
+/* Post a recipe page */
 .post-recipe {
     background-color: #fff;
     color: #A1442B;
     margin: 1%;
 }
 
+/* Login, Logout, Register pages */
 .account {
     background-color: #A44E37;
     color: #fff;
     padding: 1%;
 }
 
+/* Post a Category page (admin) */
 .category-name {
     font-weight: 800;
 }
