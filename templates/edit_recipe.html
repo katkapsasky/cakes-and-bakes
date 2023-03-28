@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
+<!-- Edit Recipe page accessible to user who posted the recipe -->
 {% load crispy_forms_tags %}
 
 <div class="col-md-4 card mb-4  mt-3 ">
@@ -25,9 +26,9 @@
 
 {% endblock content %}
 
+<!-- convert Recipe title to slug-format on front-end -->
 {% block js %}
 <script>
-    // convert Recipe title to slug-format on front-end
     /* jshint esversion: 11 */
     let title = document.getElementById("id_title");
     let slug = document.getElementById("id_slug");

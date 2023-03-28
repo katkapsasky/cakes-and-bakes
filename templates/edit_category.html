@@ -2,6 +2,7 @@
 
 {% load crispy_forms_tags %}
 
+<!-- Template only accessible by admin users to edit existing categories -->
 <div class="col-md-4 card mb-4  mt-3 ">
     <div class="card-body">
         {% if request.user.is_superuser %}

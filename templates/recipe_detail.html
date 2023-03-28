@@ -2,15 +2,14 @@
 {% load static %}
 {% block content %}
 
+<!-- Recipe Detail page accessible when clicking on the title of a recipe on the homepage -->
 <div class="recipe-heading">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 recipe-text">
-                <!-- Recipe title goes in these h1 tags -->
                 <h1 class="recipe-title">
                     {{ recipe.title }}
                 </h1>
-                <!-- Recipe author goes before the | the post's created date goes after -->
                 <p class="recipe-subtitle"> {{ recipe.author }} | {{ recipe.posted_on }} </p>
                 <p class="recipe-subtitle"> Total time: {{ recipe.total_time }} </p>
                 {% if recipe.author == request.user %}
@@ -18,8 +17,11 @@
                     <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-signup">Edit Recipe</a>
                 </p>
                 <p class="recipe-subtitle">
-                    <a href="#" class="btn btn-signup" data-bs-toggle="modal" data-bs-target="#modal-delete">Delete Recipe</a>
+                    <a href="#" class="btn btn-signup" data-bs-toggle="modal" data-bs-target="#modal-delete">Delete
+                        Recipe</a>
                 </p>
+
+                <!-- Modal from Bootstrap5 to check user is sure they want to delete their recipe -->
                 <div class="modal fade text-dark" id="modal-delete" tabindex="-1" aria-labelledby="modal-delete-label"
                     aria-hidden="true">
                     <div class="modal-dialog">
@@ -44,7 +46,6 @@
                 {% endif %}
             </div>
             <div class="d-none d-md-block col-md-6 recipe-image">
-                <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in recipe.image.url %}
                 <img src="{% static 'images/placeholder.jpg' %}" class="w-100">
                 {% else %}
@@ -72,6 +73,7 @@
                 <div class="row">
                     <div class="col-1">
                         <strong>
+                            <!-- Recipe likes -->
                             {% if user.is_authenticated %}
                             <form method="POST" class="d-inline" action="{% url 'recipe_likes' recipe.slug %}">
                                 {% csrf_token %}
@@ -93,15 +95,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <hr>
-        </div>
-    </div>
-    <div class="col-md-4 card mb-4  mt-3 ">
-        <div class="card-body">
         </div>
     </div>
 </div>

@@ -1,7 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
+<!-- Post a new recipe page -->
 {% load crispy_forms_tags %}
 
+<!-- User Feedback Alert if recipe successfully posted -->
 <div class="col-md-8 mt-3 offset-md-2">
     <div class="card-body post-recipe">
         {% if posted %}
@@ -11,6 +13,7 @@
         {% else %}
         {% if request.user.is_authenticated %}
 
+        <!-- Post a Recipe form -->
         <h3>Post a Recipe</h3>
         <p>Posting as: {{ request.user.username }}</p>
         <form method="post" action="{% url 'post_recipe' %}" enctype="multipart/form-data" class="mt-5">
@@ -25,9 +28,9 @@
 
 {% endblock content %}
 
+<!-- convert Recipe title to slug-format on front-end -->
 {% block js %}
 <script>
-    // convert Recipe title to slug-format on front-end
     /* jshint esversion: 11 */
     let title = document.getElementById("id_title");
     let slug = document.getElementById("id_slug");

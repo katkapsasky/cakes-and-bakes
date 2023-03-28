@@ -4,6 +4,7 @@
 
 {% block content %}
 
+<!-- Liked Recipes page, accessible to users who have liked recipe posts (when logged in) -->
 <div class="container-fluid">
     <div class="row">
 
@@ -16,8 +17,7 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in recipe.image.url %}
-                                <img class="card-img-top"
-                                    src="{% static 'images/placeholder.jpg' %}">
+                                <img class="card-img-top" src="{% static 'images/placeholder.jpg' %}">
                                 {% else %}
                                 <img class="card-img-top" src="{{ recipe.image.url }}">
                                 {% endif %}
@@ -36,8 +36,8 @@
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
-                </div>
-                <div class="row">
+            </div>
+            <div class="row">
                 {% endif %}
                 {% endfor %}
             </div>
