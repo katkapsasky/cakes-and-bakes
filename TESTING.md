@@ -88,63 +88,63 @@ Django:
 Defensive programming was manually tested with the below user acceptance testing:
 
 | Page | User Action | Expected Result | Pass/Fail | 
-| --- | --- | --- | --- | --- |
-| Home Page | | | | |
-| | Click on Logo | Redirection to Home page | Pass | |
-| | Click on Home link in navbar | Redirection to Home page | Pass | |
-| Register Page | | | | |
-| | Click on Register link in navbar | Redirection to Register page | Pass | |
-| | Enter valid password (twice) | Field will only accept password format | Pass | |
-| | Click on Sign Up button | Log in and redirect to homepage | Pass | |
-| Log In | | | | |
-| | Click on Login button | Redirection to Login page | Pass | |
-| | Enter valid password | Field will only accept password format | Pass | |
-| | Click Login button | Redirects user to home page | Pass | |
-| Log Out | | | | |
-| | Click Logout button | Redirects user to logout page, confirms log out first | Pass | |
-| | Click Confirm Logout button | Redirects user to home page and logs out | Pass | |
-| Liked Recipes | | | | |
-| | Click on Liked Recipes link in navbar | User will be redirected to the Liked Recipes page | Pass | |
-| | View Liked Recipes | Paginated list of recipes user has liked (if any have been liked otherwise empty page) | Pass | |
-| Recipe Detail | | | | |
-| | Click on Recipe Title from Homepage | User will be redirected to the recipe detail page | Pass | |
-| | View Recipe Detail | User can view the recipe title, image, author, total time, ingredients, method | Pass | |
-| Post a Recipe | | | | |
-| | Click on Post Recipe link in navbar | User will be redirected to Post Recipe page | Pass | |
-| | Submit new recipe form | User fills in form and submits, awaits approval in admin panel | Pass | |
-| Approve a Recipe | | | | |
-| | Navigate to admin panel with /admin and approve new and edited recipes | Approved recipes appear on homepage | Pass | |
-| Edit a Recipe | | | | |
-| | If logged in as author click edit recipe on recipe detail page | Redirect to edit recipe form page with prepopulated fields | Pass | |
-| | Submit edited recipe form | Recipe form becomes unapproved and awaits approval in admin panel | Pass | |
-| Delete a Recipe | | | | |
-| | If logged in as author click delete recipe on recipe detail page  | Confirm deletion with modal and remove rcipe if confirmed | Pass | |
-| Manage Categories (Admin) | | | | |
-| | Click on Categories link in navbar | User will be redirected to the Categories page | Pass | |
-| | View Existing Categories | Paginated list of existing categories | Pass | |
-| | Click on Add Category | Redirected to add category form | Pass | |
-| | Submit New Category | Redirect to categories page, new category visible | Pass | |
-| | Delete Category | Modal confirms deletion then category is deleted once confirm is clicked | Pass | |
+| --- | --- | --- | --- |
+| Home Page | | | | 
+| | Click on Logo | Redirection to Home page | Pass | 
+| | Click on Home link in navbar | Redirection to Home page | Pass | 
+| Register Page | | | | 
+| | Click on Register link in navbar | Redirection to Register page | Pass | 
+| | Enter valid password (twice) | Field will only accept password format | Pass | 
+| | Click on Sign Up button | Log in and redirect to homepage | Pass | 
+| Log In | | | | 
+| | Click on Login button | Redirection to Login page | Pass | 
+| | Enter valid password | Field will only accept password format | Pass | 
+| | Click Login button | Redirects user to home page | Pass | 
+| Log Out | | | | 
+| | Click Logout button | Redirects user to logout page | Pass | 
+| | Click Confirm Logout button | Redirects user to home page and logs out | Pass | 
+| Liked Recipes | | | | 
+| | Click on Liked Recipes link in navbar | User will be redirected to the Liked Recipes page | Pass | 
+| | View Liked Recipes | Paginated list of recipes user has liked (if any have been liked otherwise empty page) | Pass | 
+| Recipe Detail | | | | 
+| | Click on Recipe Title from Homepage | User will be redirected to the recipe detail page | Pass | 
+| | View Recipe Detail | User can view the recipe title, image, author, total time, ingredients, method | Pass | 
+| Post a Recipe | | | | 
+| | Click on Post Recipe link in navbar | User will be redirected to Post Recipe page | Pass | 
+| | Submit new recipe form | User fills in form and submits, awaits approval in admin panel | Pass | 
+| Approve a Recipe | | | | 
+| | Navigate to admin panel with /admin and approve new and edited recipes | Approved recipes appear on homepage | Pass | 
+| Edit a Recipe | | | | 
+| | If logged in as author click edit recipe on recipe detail page | Redirect to edit recipe form page with prepopulated fields | Pass | 
+| | Submit edited recipe form | Recipe form becomes unapproved and awaits approval in admin panel | Pass | 
+| Delete a Recipe | | | | 
+| | If logged in as author click delete recipe on recipe detail page  | Confirm deletion with modal and remove rcipe if confirmed | Pass | 
+| Manage Categories (Admin) | | | | 
+| | Click on Categories link in navbar | User will be redirected to the Categories page | Pass | 
+| | View Existing Categories | Paginated list of existing categories | Pass | 
+| | Click on Add Category | Redirected to add category form | Pass | 
+| | Submit New Category | Redirect to categories page, new category visible | Pass | 
+| | Delete Category | Modal confirms deletion then category is deleted once confirm is clicked | Pass | 
 
 
 ## User Story Testing
 
 | User Story | Screenshot | Additional Screenshot |
 | --- | --- | --- | --- |
-| As a site user, I would like to register for a personal account or login to my existing one, so that I can like and save recipes, and post my own. | ![screenshot](documentation/features/register.png) |
-| As a site user, I would like to have the option to logout of my account, so that I can protect my web privacy. | ![screenshot](documentation/features/signout.png) |
-| As a site user, I would like to view a paginated listed of recipes, so that I can select which recipe I want to read. | ![screenshot](documentation/features/homepage.png) |
-| As a site user, I would like to view images of each recipe, so that I can see what the finished result should look like. | ![screenshot](documentation/features/homepage.png) |
+| As a site user, I would like to register for a personal account or login to my existing one, so that I can like and save recipes, and post my own. | ![screenshot](documentation/features/register.png) ||
+| As a site user, I would like to have the option to logout of my account, so that I can protect my web privacy. | ![screenshot](documentation/features/signout.png) ||
+| As a site user, I would like to view a paginated listed of recipes, so that I can select which recipe I want to read. | ![screenshot](documentation/features/homepage.png) ||
+| As a site user, I would like to view images of each recipe, so that I can see what the finished result should look like. | ![screenshot](documentation/features/homepage.png) ||
 | As a site user, I would like to click on a recipe from the homepage, so that I can I can view a full list of ingredients and method. | ![screenshot](documentation/features/ingredients.png) | ![screenshot](documentation/features/method.png) |
-| As a site user, I would like to post a new recipe, so that I can share my recipes with others. | ![screenshot](documentation/features/post-recipe.png) |
+| As a site user, I would like to post a new recipe, so that I can share my recipes with others. | ![screenshot](documentation/features/post-recipe.png) ||
 | As a site user, I would like to edit my recipe once posted, so that I can keep my posts up to date and fix any errors. | ![screenshot](documentation/features/edit-recipe1.png) | ![screenshot](documentation/features/edit-recipe2.png) |
-| As a site user, I would like to be able to like other recipes, so that I can interact with other users' recipes and save them to my recipe library. | ![screenshot](documentation/features/recipe-likes.png) |
-| As a site user, I would like to view a paginated list of recipes I have liked, so that I can easily find them later and try them. | ![screenshot](documentation/features/liked-recipes.png) |
-| As a site user, I would like to view the total time needed to make each recipe, so that I can know how long it will take me to make. | ![screenshot](documentation/features/recipedetail-heading-loggedout.png) |
-| As a site administrator, I should be able to approve or reject new recipe submissions, so that I can filter out objectionable posts. | ![screenshot](documentation/features/django-admin.png) |
-| As a site administrator, I should be able to add a new recipe category, so that I can continuously add more options. | ![screenshot](documentation/features/manage-categories.png) |
-| As a site administrator, I should be able to edit recipe categories, so that I can keep categories up to date. | ![screenshot](documentation/features/edit-category.png) |
-| As a site administrator, I should be able to delete recipe categories, so that I can remove any with spelling mistakes or that are no longer relevant. | ![screenshot](documentation/features/delete-category-modal.png) |
+| As a site user, I would like to be able to like other recipes, so that I can interact with other users' recipes and save them to my recipe library. | ![screenshot](documentation/features/recipe-likes.png) ||
+| As a site user, I would like to view a paginated list of recipes I have liked, so that I can easily find them later and try them. | ![screenshot](documentation/features/liked-recipes.png) ||
+| As a site user, I would like to view the total time needed to make each recipe, so that I can know how long it will take me to make. | ![screenshot](documentation/features/recipedetail-heading-loggedout.png) ||
+| As a site administrator, I should be able to approve or reject new recipe submissions, so that I can filter out objectionable posts. | ![screenshot](documentation/features/django-admin.png) ||
+| As a site administrator, I should be able to add a new recipe category, so that I can continuously add more options. | ![screenshot](documentation/features/manage-categories.png) ||
+| As a site administrator, I should be able to edit recipe categories, so that I can keep categories up to date. | ![screenshot](documentation/features/edit-category.png) ||
+| As a site administrator, I should be able to delete recipe categories, so that I can remove any with spelling mistakes or that are no longer relevant. | ![screenshot](documentation/features/delete-category-modal.png) ||
 
 ## Bugs
 
