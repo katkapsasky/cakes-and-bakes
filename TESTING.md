@@ -87,7 +87,7 @@ Django:
 
 Defensive programming was manually tested with the below user acceptance testing:
 
-| Page | User Action | Expected Result | Pass/Fail | Comments |
+| Page | User Action | Expected Result | Pass/Fail | 
 | --- | --- | --- | --- | --- |
 | Home Page | | | | |
 | | Click on Logo | Redirection to Home page | Pass | |
@@ -101,7 +101,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Enter valid password | Field will only accept password format | Pass | |
 | | Click Login button | Redirects user to home page | Pass | |
 | Log Out | | | | |
-| | Click Logout button | Redirects user to logout page | Pass | Confirms logout first |
+| | Click Logout button | Redirects user to logout page, confirms log out first | Pass | |
 | | Click Confirm Logout button | Redirects user to home page and logs out | Pass | |
 | Liked Recipes | | | | |
 | | Click on Liked Recipes link in navbar | User will be redirected to the Liked Recipes page | Pass | |
@@ -130,7 +130,7 @@ Defensive programming was manually tested with the below user acceptance testing
 ## User Story Testing
 
 | User Story | Screenshot | Additional Screenshot |
-| --- | --- |
+| --- | --- | --- | --- |
 | As a site user, I would like to register for a personal account or login to my existing one, so that I can like and save recipes, and post my own. | ![screenshot](documentation/features/register.png) |
 | As a site user, I would like to have the option to logout of my account, so that I can protect my web privacy. | ![screenshot](documentation/features/signout.png) |
 | As a site user, I would like to view a paginated listed of recipes, so that I can select which recipe I want to read. | ![screenshot](documentation/features/homepage.png) |
