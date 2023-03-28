@@ -16,12 +16,9 @@ For the site's UX, I chose a bright and colourful scheme using a mix of pastel c
 
 I used [coolors.co](https://coolors.co/b48cba-73937e-f1d26a-d4775e-32a287) to generate my colour palette.
 
-- `#D4775E` used for the navigation bar
-- `#32A287` used for the footer
-- `#F1D26A` used for the main background colour
-- `#B48CBA` used for highlights and accents
-
 ![screenshot](documentation/colourscheme/cakesandbakes-colourscheme.png)
+
+I used [Hex Color Tool](https://www.hexcolortool.com) to darken the colors so that accessibility and visibility were adequate on the finished site.
 
 ### Typography
 
@@ -29,30 +26,33 @@ I used [coolors.co](https://coolors.co/b48cba-73937e-f1d26a-d4775e-32a287) to ge
 
 - [Raleway](https://fonts.google.com/specimen/Raleway) was used for headings, primary and secondary text.
 
-- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
+- [Font Awesome](https://fontawesome.com) icons were used throughout the site for the social media icons in the footer.
 
 ## User Stories
 
-### New Site Users
+### Site Users
 
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-
-### Returning Site Users
-
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
+- As a site user, I would like to register for a personal account or login to my existing one, so that I can like and save recipes, and post my own.
+- As a site user, I would like to have the option to logout of my account, so that I can protect my web privacy.
+- As a site user, I would like to view a paginated listed of recipes, so that I can select which recipe I want to read.
+- As a site user, I would like to view images of each recipe, so that I can see what the finished result should look like.
+- As a site user, I would like to click on a recipe from the homepage, so that I can I can view a full list of ingredients, method and user reviews.
+- As a site user, I would like to post a new recipe, so that I can share my recipes with others.
+- As a site user, I would like to edit my recipe once posted, so that I can keep my posts up to date and fix any errors.
+- As a site user, I would like to have the option to delete my recipe once posted, so that I can remove them if I no longer want to share them.
+- As a site user, I would like to be able to like other recipes, so that I can interact with other users' recipes and save them to my recipe library.
+- As a site user, I would like to be able to unlike recipes I have previously liked, so that I can remove them from my recipe library.
+- As a site user, I would like to view a paginated list of recipes I have liked, so that I can easily find them later and try them.
+- As a site user, I would like to view the total time needed to make each recipe, so that I can know how long it will take me to make.
+- As a site user, I would like to view the name of the person who created the recipe, so that I can find more recipes by them.
 
 ### Site Admin
 
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
+- As a site administrator, I should be able to approve or reject new recipe submissions, so that I can filter out objectionable posts.
+- As a site administrator, I should be able to approve edits made to recipes by the original poster, so that I can check any changes before sharing on the live site.
+- As a site administrator, I should be able to add a new recipe category, so that I can continuously add more options.
+- As a site administrator, I should be able to edit recipe categories, so that I can keep categories up to date.
+- As a site administrator, I should be able to delete recipe categories, so that I can remove any with spelling mistakes or that are no longer relevant.
 
 ## Wireframes
 
