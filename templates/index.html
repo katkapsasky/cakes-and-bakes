@@ -19,7 +19,7 @@
                                 {% if "placeholder" in recipe.image.url %}
                                 <img class="card-img-top" alt="bowl of baking ingredients" src="{% static 'images/placeholder.jpg' %}">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ recipe.image.url }}">
+                                <img class="card-img-top" alt="recipe image" src=" {{ recipe.image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ recipe.author }}</p>
