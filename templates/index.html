@@ -17,7 +17,7 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in recipe.image.url %}
-                                <img class="card-img-top" src="{% static 'images/placeholder.jpg' %}">
+                                <img class="card-img-top" alt="bowl of baking ingredients" src="{% static 'images/placeholder.jpg' %}">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ recipe.image.url }}">
                                 {% endif %}
@@ -29,7 +29,7 @@
                                 <h2 class="card-title">{{ recipe.title }}</h2>
                                 <p class="card-text">{{ recipe.recipe_description }}</p>
                             </a>
-                            <hr />
+                            <hr>
                             <p class="card-text text-muted h6">{{ recipe.posted_on }} <i class="far fa-heart"></i>
                                 {{ recipe.number_of_likes }}</p>
                         </div>
