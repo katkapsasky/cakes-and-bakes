@@ -92,27 +92,109 @@ Additionally, for site administrators there is a Categories page where they can 
 
 ### Existing Features
 
-- **Feature #1**
+- **Navbar**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    The navigation bar is found at the top of the page and remains consistent in design across the site. It includes the Cakes & Bakes logo and:
+     - a link to the homepage, a link to register and a link to sign in (for logged out/new site users)
+     - a link to the homepage, a link to the user's liked recipes, a post a recipe link and a log out link (for registered, logged in site users)
+     - a link to the homepage, a link to the user's liked recipes, a link to manage categories, a post a recipe link and a log out link (for logged in administrators/superusers)
 
-![screenshot](documentation/feature01.png)
+![site user navbar](documentation/features/navbar.png)
+![site admin navbar](documentation/features/admin-navbar.png)
 
-- **Feature #2**
+- **Register for an account**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    The sign up page is available to new users or logged out users who want to create a new account. A username and password is required but the email address is optional. Once signed up, users will be able to like recipes and post their own.
 
-![screenshot](documentation/feature02.png)
+![sign up page](documentation/features/register.png)
 
-- **Feature #3**
+- **Sign in to your account**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    The sign in page is for returning site users and administrators to log in to their account. It requires the user's username and password.
 
-![screenshot](documentation/feature03.png)
+![sign in page](documentation/features/signin.png)
 
-Repeat as necessary for as many features as your site contains.
+- **Log out of your account**
 
-Hint: the more, the merrier!
+    The log in page is available to any logged in user or administrator who would like to sign out of their account.
+
+![sign out page](documentation/features/signout.png)
+
+- **Homepage**
+
+    The homepage is the site's landing page and is available to all users, whether they have access to an account or not. It includes a paginated list of all the recipes posted ordered by date created on with the latest showing first, an image, the author's name and a short recipe description. Users can click on the recipe title to view the recipe details.
+
+![homepage](documentation/features/homepage.png)
+
+- **Recipe Detail page**
+
+    The recipe detail page shows all information posted about the recipe. The heading includes the recipe title, author, image and total time to make. If the user logged in is the author of the recipe, this is also where they will go to edit or delete their recipe post.
+    
+    ![recipe detail page logged out](documentation/features/recipedetail-heading-loggedout.png)
+    ![recipe detail page logged in as author](documentation/features/recipedetail-heading-loggedin.png)
+
+    Underneath the recipe heading users can find the ingredients and method for the recipe.
+
+    ![recipe ingredients](documentation/features/ingredients.png)
+    ![recipe method](documentation/features/method.png)
+
+    At the bottom of the page there is a heart icon which logged in users can click to like a recipe. They are also able to see the total number of likes a recipe has.
+
+    ![recipe likes](documentation/features/recipe-likes.png)
+
+- **Liked Recipes**
+
+    The liked recipes page carries the layout from the homepage and displays any recipes a user has liked when they are logged into their account.
+    
+    ![liked recipes](documentation/features/liked-recipes.png)
+
+- **Posting a Recipe**
+
+    Logged in users can navigate to the post a recipe page where they will be able to use the form to fill out their new recipe. All fields are required apart from the image upload. If a user does not upload an image, a placeholder image will be used instead.
+    
+    ![posting a recipe](documentation/features/post-recipe.png)
+
+- **Editing a Recipe**
+
+    Logged in users can edit recipes they have previously posted by clicking onto the recipe from the homepage and then selecting the edit button. This will bring up the post recipe form with the information previously used prepopulating the fields for ease of editing.
+
+    ![editing a recipe](documentation/features/edit-recipe1.png)
+    ![editing a recipe](documentation/features/edit-recipe2.png)
+
+- **Managing Categories**
+
+    Administrators and superusers can navigate to the Categories page in order to add new categories and edit or delete existing ones.
+
+    ![manage categories](documentation/features/manage-categories.png)
+    ![add a category](documentation/features/post-category.png)
+    ![edit a category](documentation/features/edit-category.png)
+
+- **Footer**
+
+    The footer is consistent in colour and design across the site and includes the developer's name and social media links. 
+    
+    ![footer](documentation/features/footer.png)
+
+- **Messages and Modals**
+
+    Messages and modals appear throughout the site whenever their is user interactivity. These were implemented to provide users with feedback to let them know if an action they have tried to carry out has been completed successfully or not.
+    
+    ![message - recipe liked](documentation/features/msg-recipeliked.png)
+    ![message - recipe unliked](documentation/features/msg-recipeunliked.png)
+    ![message - signed out](documentation/features/msg-signedout.png)
+    ![message - recipe edited](documentation/features/msg-recipeedited.png)
+    ![message - category edited](documentation/features/msg-category-edited.png)
+    ![message - category deleted](documentation/features/msg-category-deleted.png)
+
+    The delete modal allows for an extra step before making permanent changes, such as deletion, to give users and administrators the opportunity to cancel if clicking the button was an accident or they change their mind.
+
+    ![modal - deletion](documentation/features/delete-category-modal.png)
+
+- **Django Admin Panel**
+
+    The Django Admin Panel is only accessible to site administrators and superusers. From here you can manage posted recipes, approving new ones or edited ones or deleting any as needed. There's also access to users who have signed up and to managing, editing and deleting recipe categories. 
+    
+    ![footer](documentation/features/django-admin.png)
 
 ### Future Features
 
@@ -150,50 +232,63 @@ Hint: the more, the merrier!
 
 ## Database Design
 
-Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models.
-Understanding the relationships between different tables can save time later in the project.
-
-Using your defined models (one example below), create an ERD with the relationships identified.
+I designed two custom models, the Recipe model which contains all the information required to post a new recipe as well as to approve it as an administrator and like it as a user, and the connected Category model which allows users to include a recipe type when posting their recipes. 
 
 ```python
-class Product(models.Model):
+class Recipe(models.Model):
+    '''
+    Database model for recipe components
+    '''
+    title = models.CharField(
+        max_length=50, unique=True, null=False, blank=False
+    )
+    slug = models.SlugField(
+        max_length=200, unique=True, null=False, blank=False
+    )
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="recipe_post"
+    )
     category = models.ForeignKey(
-        "Category", null=True, blank=True, on_delete=models.SET_NULL)
-    sku = models.CharField(max_length=254, null=True, blank=True)
-    name = models.CharField(max_length=254)
-    description = models.TextField()
-    has_sizes = models.BooleanField(default=False, null=True, blank=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
+        Category,
+        on_delete=models.CASCADE
+    )
+    total_time = models.CharField(max_length=50, null=False, blank=False)
+    ingredients = models.TextField(null=False, blank=False)
+    method = models.TextField(null=False, blank=False)
+    image = CloudinaryField('image', default='placeholder')
+    recipe_description = models.CharField(
+        max_length=200, null=False, blank=False
+    )
+    posted_on = models.DateTimeField(auto_now_add=True)
+    likes = models.ManyToManyField(
+        User, related_name='recipe_likes', blank=True
+    )
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['-posted_on']
 
     def __str__(self):
-        return self.name
+        return self.title
+
+    def number_of_likes(self):
+        return self.likes.count()
 ```
 
-A couple recommendations for building free ERDs:
-- [Draw.io](https://draw.io)
-- [Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning)
+```python
+class Category(models.Model):
+    '''
+    Database model for recipe categories
+    '''
+    recipe_type = models.CharField(max_length=50, null=False, blank=False)
 
-![screenshot](documentation/erd.png)
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
 
-Using Markdown formatting to represent an example ERD table using the Product model above:
-
-- Table: **Product**
-
-    | **PK** | **id** (unique) | Type | Notes |
-    | --- | --- | --- | --- |
-    | **FK** | category | ForeignKey | FK to **Category** model |
-    | | sku | CharField | |
-    | | name | CharField | |
-    | | description | TextField | |
-    | | has_sizes | BooleanField | |
-    | | price | DecimalField | |
-    | | rating | DecimalField | |
-    | | image_url | URLField | |
-    | | image | ImageField | |
+    def __str__(self):
+        return self.recipe_type
+```
 
 ## Agile Development Process
 
@@ -202,20 +297,14 @@ Using Markdown formatting to represent an example ERD table using the Product mo
 [GitHub Projects](https://github.com/katkapsasky/cakes-and-bakes/projects) served as an Agile tool for this project.
 It isn't a specialized tool, but with the right tags and project creation/issue assignments, it can be made to work.
 
-Through it, user stories, issues, and milestone tasks were planned, then tracked on a weekly basis using the basic Kanban board.
+Through it, user stories and issues were planned, then tracked on a weekly basis using the basic Kanban board.
 
-Consider adding a basic screenshot of your Projects Board.
-
-![screenshot](documentation/gh-projects.png)
+![screenshot](documentation/agile/github-projects.png)
 
 ### GitHub Issues
 
 [GitHub Issues](https://github.com/katkapsasky/cakes-and-bakes/issues) served as an another Agile tool.
 There, I used my own **User Story Template** to manage user stories.
-
-It also helped with milestone iterations on a weekly basis.
-
-Consider adding a screenshot of your Open and Closed Issues.
 
 - [Open Issues](https://github.com/katkapsasky/cakes-and-bakes/issues)
 
@@ -376,6 +465,10 @@ You can fork this repository by using the following steps:
 
 | Source | Location | Notes |
 | --- | --- | --- |
+| [I Think Therefore I Blog by Code Institute](https://codeinstitute.net/) | whole site | used as a template to build upon for main site functionality |
+| [Django 101 Open Tech School](http://opentechschool.github.io/django-101/en/first_steps/views_templates.html) | views.py | Creating the first Django views |
+| [Py Tutorial by Alexander Williams](https://pytutorial.com/how-to-solve-you-are-trying-to-add-a-non-nullable-field-to-without-a-default/?utm_content=cmp-true) | models.py | fixing non-nullable field error |
+| [Organize Django Models, Stack Overflow](https://stackoverflow.com/questions/61618882/best-way-to-organize-models-for-django-recipe-app-with-ingredients-recipes-and) | models.py | organizing recipe model |
 | [Markdown Builder by Tim Nelson](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
 | [Bootstrap Modal](https://getbootstrap.com/docs/5.0/components/modal/) | Delete Recipe/Category buttons | used as an extra step of user feedback when attempting permanent actions |
 
