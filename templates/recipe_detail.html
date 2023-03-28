@@ -47,9 +47,9 @@
             </div>
             <div class="d-none d-md-block col-md-6 recipe-image">
                 {% if "placeholder" in recipe.image.url %}
-                <img src="{% static 'images/placeholder.jpg' %}" class="w-100">
+                <img src="{% static 'images/placeholder.jpg' %}" alt="bowl of baking ingredients" class="w-100">
                 {% else %}
-                <img src="{{ recipe.image.url }}" class="w-100">
+                <img src="{{ recipe.image.url }}" alt="recipe image" class="w-100">
                 {% endif %}
             </div>
         </div>
@@ -72,7 +72,6 @@
                 <br>
                 <div class="row">
                     <div class="col-1">
-                        <strong>
                             <!-- Recipe likes -->
                             {% if user.is_authenticated %}
                             <form method="POST" class="d-inline" action="{% url 'recipe_likes' recipe.slug %}">
@@ -91,7 +90,6 @@
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
                             <span class="text-secondary">{{ recipe.number_of_likes }}</span>
-                        </strong>
                     </div>
                 </div>
             </div>
