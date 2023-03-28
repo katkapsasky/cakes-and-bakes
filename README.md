@@ -308,11 +308,11 @@ There, I used my own **User Story Template** to manage user stories.
 
 - [Open Issues](https://github.com/katkapsasky/cakes-and-bakes/issues)
 
-    ![screenshot](documentation/gh-issues-open.png)
+    ![screenshot](documentation/agile/gh-issues-open.png)
 
 - [Closed Issues](https://github.com/katkapsasky/cakes-and-bakes/issues?q=is%3Aissue+is%3Aclosed)
 
-    ![screenshot](documentation/gh-issues-closed.png)
+    ![screenshot](documentation/agile/gh-issues-closed.png)
 
 ### MoSCoW Prioritization
 
