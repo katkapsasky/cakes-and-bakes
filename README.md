@@ -36,7 +36,7 @@ I used [Hex Color Tool](https://www.hexcolortool.com) to darken the colors so th
 - As a site user, I would like to have the option to logout of my account, so that I can protect my web privacy.
 - As a site user, I would like to view a paginated listed of recipes, so that I can select which recipe I want to read.
 - As a site user, I would like to view images of each recipe, so that I can see what the finished result should look like.
-- As a site user, I would like to click on a recipe from the homepage, so that I can I can view a full list of ingredients, method and user reviews.
+- As a site user, I would like to click on a recipe from the homepage, so that I can I can view a full list of ingredients and method.
 - As a site user, I would like to post a new recipe, so that I can share my recipes with others.
 - As a site user, I would like to edit my recipe once posted, so that I can keep my posts up to date and fix any errors.
 - As a site user, I would like to have the option to delete my recipe once posted, so that I can remove them if I no longer want to share them.

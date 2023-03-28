@@ -129,23 +129,54 @@ Defensive programming was manually tested with the below user acceptance testing
 
 ## User Story Testing
 
-| User Story | Screenshot |
+| User Story | Screenshot | Additional Screenshot |
 | --- | --- |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature01.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature02.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature03.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature04.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature05.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/feature06.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature07.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature08.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature09.png) |
-| repeat for all remaining user stories | x |
+| As a site user, I would like to register for a personal account or login to my existing one, so that I can like and save recipes, and post my own. | ![screenshot](documentation/features/register.png) |
+| As a site user, I would like to have the option to logout of my account, so that I can protect my web privacy. | ![screenshot](documentation/features/signout.png) |
+| As a site user, I would like to view a paginated listed of recipes, so that I can select which recipe I want to read. | ![screenshot](documentation/features/homepage.png) |
+| As a site user, I would like to view images of each recipe, so that I can see what the finished result should look like. | ![screenshot](documentation/features/homepage.png) |
+| As a site user, I would like to click on a recipe from the homepage, so that I can I can view a full list of ingredients and method. | ![screenshot](documentation/features/ingredients.png) | ![screenshot](documentation/features/method.png) |
+| As a site user, I would like to post a new recipe, so that I can share my recipes with others. | ![screenshot](documentation/features/post-recipe.png) |
+| As a site user, I would like to edit my recipe once posted, so that I can keep my posts up to date and fix any errors. | ![screenshot](documentation/features/edit-recipe1.png) | ![screenshot](documentation/features/edit-recipe2.png) |
+| As a site user, I would like to be able to like other recipes, so that I can interact with other users' recipes and save them to my recipe library. | ![screenshot](documentation/features/recipe-likes.png) |
+| As a site user, I would like to view a paginated list of recipes I have liked, so that I can easily find them later and try them. | ![screenshot](documentation/features/liked-recipes.png) |
+| As a site user, I would like to view the total time needed to make each recipe, so that I can know how long it will take me to make. | ![screenshot](documentation/features/recipedetail-heading-loggedout.png) |
+| As a site administrator, I should be able to approve or reject new recipe submissions, so that I can filter out objectionable posts. | ![screenshot](documentation/features/django-admin.png) |
+| As a site administrator, I should be able to add a new recipe category, so that I can continuously add more options. | ![screenshot](documentation/features/manage-categories.png) |
+| As a site administrator, I should be able to edit recipe categories, so that I can keep categories up to date. | ![screenshot](documentation/features/edit-category.png) |
+| As a site administrator, I should be able to delete recipe categories, so that I can remove any with spelling mistakes or that are no longer relevant. | ![screenshot](documentation/features/delete-category-modal.png) |
 
 ## Bugs
 
 **Fixed Bugs**
 
+- Missing Alt Attributes
+  When running my HTML Templates through the HTML Validator I received an Error for missing img alt attributes. I fixed this by adding alt attributes to the placeholder image and the recipe image uploaded by users when posting a new recipe. 
+
+- Like Functionality not working
+  When clicking the heart on a recipe as a logged in user, the like would not show up. I realised that in my RecipeLikes View in views.py I had named my function "recipe" instead of "post" which meant the action wasn't being understood as a post method. 
+
+    ```python
+    class RecipeLikes(View):
+        """
+            Class based function to like a recipe
+    """
+        def post(self, request, slug, *args, **kwargs):
+            recipe = get_object_or_404(Recipe, slug=slug)
+            if recipe.likes.filter(id=request.user.id).exists():
+                recipe.likes.remove(request.user)
+                messages.success(
+                    request,
+                    'Recipe successfully unliked.'
+                )
+            else:
+                recipe.likes.add(request.user)
+                messages.success(
+                    request,
+                    'Recipe successfully liked.'
+                )
+            return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+```
 
 **Unfixed Bugs**
 
